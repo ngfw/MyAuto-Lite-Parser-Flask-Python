@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 app = Flask(__name__)
 
 # mainpage = 'http://www.myauto.ge/'
-pageurl = 'http://www.myauto.ge/?action=search&page='
+pageurl = 'http://www.myauto.ge/ka/search/?stype=0&marka=&model=&category_id=m0&year_from=&year_to=&price_from=&price_to=&volume_from=0&volume_to=0&gear_type_id=0&fuel_type_id=0&last_days=&customs_passed=&right_wheel=&location_id_1=&color_id=&car_run_to=&saloon_color_id=&door_type_id=0&drive_type_id=&climat=&det_search=&ord=1&last_model=&keyword='
 
 
 
@@ -44,8 +44,9 @@ def index():
 
         data.append(car_info)
 
+     
 
     return render_template("index.html", data=data)
-
+    print(data)
 if __name__ == '__main__':
     app.run(debug=True)
